@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
-import { useRouter } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import styles from './popularjobs.style';
 import { COLORS, SIZES } from '../../../constants';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
@@ -18,7 +18,7 @@ const Popularjobs = () => {
   const [selectedJob, setSelectedJob] = useState();
 
   const handleCardPress = (item) => {
-    
+    navigation.navigate('job-details', { jobId: item.job_id });
   }
 
   return (
@@ -40,9 +40,12 @@ const Popularjobs = () => {
             <FlatList 
               data={data}
               renderItem={({ item }) => (
+                <TouchableOpacity onPress={() => handleCardPress(item)}>
                 <PopularJobCard
                   item={item}
+                  handleNavigate={() => router.push(`/job-details/${item.job_id}`)}
                 />
+                </TouchableOpacity>
               )}
               keyExtractor={item => item?.job_id}
               contentContainerStyle={{ columnGap: SIZES.medium }}
