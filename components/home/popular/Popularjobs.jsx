@@ -15,7 +15,11 @@ const Popularjobs = () => {
     }
   );
 
-  console.log(data)
+  const [selectedJob, setSelectedJob] = useState();
+
+  const handleCardPress = (item) => {
+    
+  }
 
   return (
     <View style={styles.container}>
