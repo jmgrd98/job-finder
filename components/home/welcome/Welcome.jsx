@@ -41,7 +41,7 @@ const Welcome = () => {
 
       <SafeAreaView style={styles.tabsContainer}>
         <FlatList 
-          data={jobTypes}
+          data={jobTypes} 
           renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.tab(activeJobtype, item)}
