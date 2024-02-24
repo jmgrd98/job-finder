@@ -26,6 +26,28 @@ const JobDetails = () => {
 
     }
 
+    const displayTabContent = () => {
+        switch(activeTab) {
+            case "Qualifications":
+                return <Specifics
+                        title="Qualifications"
+                        points={data[0].job_highlights?.Qualifications ?? ['N/A']}
+                        />
+            case "About":
+                return <JobAbout
+                title="About"
+                info={data[0].job_description ?? ['No data provided']}
+                />
+            case "Responsibilities":
+                return <Specifics
+                title="Responsibilities"
+                points={data[0].job_highlights?.Qualifications ?? ['N/A']}
+                />
+            default:
+                break;
+        }
+    }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
         <Stack.Screen
@@ -74,6 +96,8 @@ const JobDetails = () => {
                                     activeTab={activeTab}
                                     setActiveTab={setActiveTab}
                                 />
+
+                                {displayTabContent()}
                             </View>
                         )
                     )
