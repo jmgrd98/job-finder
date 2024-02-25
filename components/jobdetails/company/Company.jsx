@@ -5,6 +5,7 @@ import styles from './company.style';
 import { checkImageURL } from '../../../utils';
 
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
+  console.log()
   return (
     <View style={styles.container}>
       <View style={styles.logoBox}>
