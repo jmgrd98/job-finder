@@ -1,13 +1,15 @@
-# Expo Router Example
+# Como rodar a aplicação
 
-Use [`expo-router`](https://docs.expo.dev/router/introduction/) to build native navigation using files in the `app/` directory.
-
-## 🚀 How to use
-
-```sh
-npx create-expo-app -e with-router
+1. Clone o repositório:
 ```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://docs.expo.dev/router/introduction/)
+git clone https://github.com/jmgrd98/react-native-app.git
+```
+2. Instale as dependências:
+```
+npm install
+```
+3. Rode a aplicação:
+```
+npx expo start
+```
+4. Escaneie o QR Code que irá aparecer no terminal com o seu dispositivo móvel.
